@@ -91,3 +91,59 @@ function liste() { //  Class liste
 	}
 
 }
+
+
+function plateau_de_jeu() {
+
+	this.colonne = 5;
+	this.ligne = 6;
+	this.plateau = function() {
+		var _tmp = [];
+
+		for (var c = 0; c < this.colonne; c++) {
+			_tmp[c] = [];
+			for (var f = 0; f < this.ligne; f++) {
+				if (c == 0) {
+					_tmp[c].push(new case_(0, 0));
+					_tmp[c].setEst_detruit(1);
+				} else {
+					_tmp[c].push(new case_(0, 0));
+				}
+			}
+		}
+
+		return _tmp;
+	}
+
+}
+
+function case_(destructible, revele) {
+
+	this.est_revele = 0;
+	this.est_destructible = destructible;
+	this.est_detruit = 0;
+
+	this.getEst_revele = function() {
+		return this.est_revele;
+	}
+
+	this.getEst_destructible = function() {
+		return this.est_destructible;
+	}
+
+	this.getEst_detruit = function() {
+		return this.est_detruit;
+	}
+
+	this.setEst_revele = function(_revele) {
+		this.est_revele = _revele;
+	}
+
+	this.setEst_destructible = function(_destructible) {
+		this.est_destructible = _destructible;
+	}
+
+	this.setEst_detruit = function(_detruit) {
+		this.est_detruit = _detruit;
+	}
+}
