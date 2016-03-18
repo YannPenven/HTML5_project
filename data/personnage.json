@@ -1,0 +1,17 @@
+{ "type": "success",
+ "héro":[
+    {
+      "nom":"Maurice",
+      "life":20,
+      "damage":4
+    }
+    
+  ],
+ "monstre":[
+   {
+     "id":1,
+     "life":3,
+     "damage":2
+   }
+ ]
+}
