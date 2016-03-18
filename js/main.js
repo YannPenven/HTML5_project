@@ -1,11 +1,17 @@
 $("document").ready(function(){
   $.ajax({
   		type: "GET",
-  		url: "http://api.icndb.com/jokes/random/5",
-  		dataType : 'html',
+  		url: "https://api.myjson.com/bins/2gmcn",
+  		dataType : 'json',
+      contentType: "application/json; charset=utf-8",
+    
   		success : function(json_file, statut){ // code_html contient le HTML renvoyé
-          $("body").html(json_file); 
-      }
+          console.log(json_file); 
+      },
+    
+      error : function(resultat, statut, erreur){
+          console.log("echec");
+       },
   })
 
 });
