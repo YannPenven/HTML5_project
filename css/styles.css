@@ -1,31 +1,48 @@
 body {
-  background: #F1F1F1 none repeat scroll 0% 0%;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 7px 0px 0px 0px;
-  padding: 0px;
+    background: #F1F1F1 none repeat scroll 0% 0%;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 7px 0px 0px 0px;
+    padding: 0px;
 }
 
 #body {
-  background-color: white;
-  max-width: 1000px;
-  margin: 0% auto;
-  padding: 2%;
-  box-shadow: 1px 1px 5px 0px #656565;
+    background-color: white;
+    max-width: 900px;
+    margin: 0% auto;
+    padding: 2%;
+    box-shadow: 1px 1px 5px 0px #656565;
 }
 
+/* ------------------- header -------------------- */
+
 #header {
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 5%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5%;
 }
 
 #title {
-  font-size: 30px;
-  margin-bottom: 2%;
+    font-size: 30px;
+    margin-bottom: 2%;
 }
 
 #crew {
-  font-style: italic;
-  font-family: 'Trebuchet MS', Geneva, sans-serif;
-  font-size: 12px;
+    font-style: italic;
+    font-family: 'Trebuchet MS', Geneva, sans-serif;
+    font-size: 12px;
+}
+
+
+/* ------------------ content ---------------------- */
+
+.titre1 {
+    color: #204A65;
+    font-size: 24px;
+    border-bottom: 1px dotted;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.para {
+    text-align: justify;
+    color: #595959;
 }
