@@ -114,6 +114,30 @@ function plateau_de_jeu() {
 
 		return _tmp;
 	}
+	
+	this.nombre_case_restante = this.colonne*this.ligne;
+	
+	this.nombre_monstre = 3;
+	
+	this.taux_cle = 1/this.nombre_monstre;
+	
+	this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+	
+	this.case_en_moins = function(){
+		
+		this.nombre_case_restante = this.nombre_case_restante-1;
+		this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+		
+	}
+	
+	this.monstre_en_moins = function(){
+		
+		this.nombre_monstre = this.nombre_monstre-1;
+		this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+		this.taux_cle = 1/this.nombre_monstre;
+		
+	}
+	
 
 }
 
