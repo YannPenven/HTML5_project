@@ -2,7 +2,7 @@ function hero(_life, _damage) {
 
 	this.life = _life;
 	this.damage = _damage;
-	this.lifechange = new Event(this);
+	this.lifechange = new event(this);
 
 
 	this.setlife = function(_life) {
@@ -138,15 +138,35 @@ function plateau_de_jeu() {
 		
 	}
 	
+	this.getPlateau = function(){
+		return this.plateau;
+	}
+	
+	this.getColonne = function(){
+		return this.colonne;
+	}
+	
+	this.getLigne = function(){
+		return this.ligne;
+	}
+	
+	this.getTaux_cle = function(){
+		return this.taux_cle;
+	}
+	
+	this.getTaux_monstre = function(){
+		return this.taux_monstre;
+	}
 
 
 }
 
 function case_(destructible, revele) {
 
-	this.est_revele = 0;
+	this.est_revele = revele;
 	this.est_destructible = destructible;
 	this.est_detruit = 0;
+	this.monstre = 0;
 
 	this.getEst_revele = function() {
 		return this.est_revele;
@@ -158,6 +178,10 @@ function case_(destructible, revele) {
 
 	this.getEst_detruit = function() {
 		return this.est_detruit;
+	}
+	
+	this.getMonstre = function(){
+		return this.monstre;
 	}
 
 	this.setEst_revele = function(_revele) {
@@ -171,4 +195,10 @@ function case_(destructible, revele) {
 	this.setEst_detruit = function(_detruit) {
 		this.est_detruit = _detruit;
 	}
+	
+	this.setMonstre = function(_monstre){
+		this.monstre = _monstre;
+	}
+	
+	
 }
