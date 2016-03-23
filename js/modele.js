@@ -144,7 +144,7 @@ function plateau_de_jeu() {
 
 function case_(destructible, revele) {
 
-	this.est_revele = 0;
+	this.est_revele = revele;
 	this.est_destructible = destructible;
 	this.est_detruit = 0;
 
