@@ -49,4 +49,14 @@ body {
 
 /* ----------------- jeu -------------------------- */
 
+.hidden {
+  background-image: url("../img/wall_unrevealed.png");
+}
 
+.revealed {
+  
+}
+
+.broken {
+  
+}
