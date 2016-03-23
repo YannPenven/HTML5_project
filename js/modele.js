@@ -91,3 +91,84 @@ function liste() { //  Class liste
 	}
 
 }
+
+
+function plateau_de_jeu() {
+
+	this.colonne = 5;
+	this.ligne = 6;
+	this.plateau = function() {
+		var _tmp = [];
+
+		for (var c = 0; c < this.colonne; c++) {
+			_tmp[c] = [];
+			for (var f = 0; f < this.ligne; f++) {
+				if (c === 0) {
+					_tmp[c].push(new case_(0, 0));
+					_tmp[c].setEst_detruit(1);
+				} else {
+					_tmp[c].push(new case_(0, 0));
+				}
+			}
+		}
+
+		return _tmp;
+	}
+
+	this.nombre_case_restante = this.colonne*this.ligne;
+	
+	this.nombre_monstre = 3;
+	
+	this.taux_cle = 1/this.nombre_monstre;
+	
+	this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+	
+	this.case_en_moins = function(){
+		
+		this.nombre_case_restante = this.nombre_case_restante-1;
+		this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+		
+	}
+	
+	this.monstre_en_moins = function(){
+		
+		this.nombre_monstre = this.nombre_monstre-1;
+		this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
+		this.taux_cle = 1/this.nombre_monstre;
+		
+	}
+	
+
+
+}
+
+function case_(destructible, revele) {
+
+	this.est_revele = revele;
+	this.est_destructible = destructible;
+	this.est_detruit = 0;
+
+	this.getEst_revele = function() {
+		return this.est_revele;
+	}
+
+	this.getEst_destructible = function() {
+		return this.est_destructible;
+	}
+
+	this.getEst_detruit = function() {
+		return this.est_detruit;
+	}
+
+	this.setEst_revele = function(_revele) {
+		this.est_revele = _revele;
+	}
+
+	this.setEst_destructible = function(_destructible) {
+		this.est_destructible = _destructible;
+	}
+
+	this.setEst_detruit = function(_detruit) {
+		this.est_detruit = _detruit;
+	}
+}
