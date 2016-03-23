@@ -23,7 +23,8 @@ $("document").ready(function(){
               monstreList.push(new hero(monster_data[i].life,monster_data[i].damage));
             }
           console.log(heroList);
-          initGame();
+          //affiche plateau
+          
       },
     
       error : function(resultat, statut, erreur){
