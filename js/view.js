@@ -14,14 +14,18 @@ $(document).ready(function() {
         for (var i = 0; i < 6; i++) {
             $('#board').append("<tr>");
             for (var j = 0; j < 5; j++) {
+                
+                listeCases[i][j].setEst_detruit(1);
+                
+                $("#board").append("<td id='" + i + "_" + j + "' class='revealed img'></td>");
 
-                if (!(listeCases[i][j].getEst_revele)) {
+                /*if (!(listeCases[i][j].getEst_revele)) {
                     $("#board").append("<td id='" + i + "_" + j + "' class='hidden img'></td>");
                 } else if (listeCases[i][j].getEst_destructible) {
                     $("#board").append("<td id='" + i + "_" + j + "' class='revealed img'></td>");
                 } else {
                     $("#board").append("<td id='" + i + "_" + j + "' class='broken img'></td>");
-                }
+                }*/
 
             }
             $('#board').append("</tr>");

@@ -75,3 +75,7 @@ td {
 .broken {
   background-image: url("../img/floor.png");
 }
+
+.blocked {
+  background-image: url("../img/red_cross.png");
+}
