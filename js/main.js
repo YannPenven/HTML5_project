@@ -1,15 +1,19 @@
 $("document").ready(function(){
+
   
   var heroList = [];
   var monstreList = [];
   
+ 
   $.ajax({
   		type: "GET",
-  		url: "https://api.myjson.com/bins/2qw6u",
+  		url: "https://api.myjson.com/bins/2gmcn",
+
   		dataType : 'json',
       contentType: "application/json; charset=utf-8",
     
   		success : function(json_file, statut){ // code_html contient le HTML renvoyé
+
           console.log(json_file);
            //var parsed_data = JSON.parse(json_file);
            var hero_data = json_file.hero;
@@ -24,14 +28,17 @@ $("document").ready(function(){
             }
           console.log(heroList);
           //affiche plateau
-          
+   
       },
     
       error : function(resultat, statut, erreur){
           console.log("echec");
        },
   })
+
   
   //console.log(heroList);
 
 });
+
+

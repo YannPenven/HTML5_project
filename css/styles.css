@@ -46,3 +46,17 @@ body {
     text-align: justify;
     color: #595959;
 }
+
+/* ----------------- jeu -------------------------- */
+
+.hidden {
+  background-image: url("../img/wall_unrevealed.png");
+}
+
+.revealed {
+  
+}
+
+.broken {
+  
+}
