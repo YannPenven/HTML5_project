@@ -89,6 +89,7 @@ function liste() { //  Class liste
 	this.taille_liste = function() {
 		return this.liste_monstre.length;
 	}
+	
 
 }
 
@@ -135,6 +136,48 @@ function plateau_de_jeu() {
 		this.nombre_monstre = this.nombre_monstre-1;
 		this.taux_monstre = this.nombre_monstre/this.nombre_case_restante;
 		this.taux_cle = 1/this.nombre_monstre;
+		
+	}
+	
+	this.cases_adjacentes_revelees = function(x,y){
+		
+		if(x+1<6)
+			this.plateau[x+1][y].setEst_destructible(1);
+		if(x+1<6 && y+1<5)
+			this.plateau[x+1][y+1].setEst_destructible(1);
+		if(x+1<6 && y-1>=0)
+			this.plateau[x+1][y-1].setEst_destructible(1);
+		if(y+1<5)
+			this.plateau[x][y+1].setEst_destructible(1);
+		if(y-1>=0)
+			this.plateau[x][y-1].setEst_destructible(1);
+		if(x-1>=0)
+			this.plateau[x-1][y].setEst_destructible(1);
+		if(x-1>=0 && y-1>=0)
+			this.plateau[x-1][y-1].setEst_destructible(1);
+		if(x-1>=0 && y+1<5)
+			this.plateau[x-1][y+1].setEst_destructible(1);
+		
+	}
+	
+	this.case_adjacentes_destructibles = function(x,y){
+		
+		if(x+1<6)
+			this.plateau[x+1][y].setEst_revele(1);
+		if(x+1<6 && y+1<5)
+			this.plateau[x+1][y+1].setEst_revele(1);
+		if(x+1<6 && y-1>=0)
+			this.plateau[x+1][y-1].setEst_revele(1);
+		if(y+1<5)
+			this.plateau[x][y+1].setEst_revele(1);
+		if(y-1>=0)
+			this.plateau[x][y-1].setEst_revele(1);
+		if(x-1>=0)
+			this.plateau[x-1][y].setEst_revele(1);
+		if(x-1>=0 && y-1>=0)
+			this.plateau[x-1][y-1].setEst_revele(1);
+		if(x-1>=0 && y+1<5)
+			this.plateau[x-1][y+1].setEst_revele(1);
 		
 	}
 	
