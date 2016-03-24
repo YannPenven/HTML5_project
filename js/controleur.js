@@ -1,3 +1,6 @@
+var clic_case = new event();
+
+
 $(".case").click(function(){  // Lors d'un clic sur une case 
     
     /****** Ne pas oublier de mettre le nom de la div ******/
@@ -19,7 +22,7 @@ $(".case").click(function(){  // Lors d'un clic sur une case
             
         }
         
-        if(Math.random() <= plateau_de_jeu.getTaux_cle){
+        if(Math.random() <= plateau_de_jeu.getTaux_cle){    // Calcul si il y a une clé ou non
             
             
             
