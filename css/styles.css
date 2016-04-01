@@ -85,6 +85,10 @@ td {
   background-image: url("../img/blocked.png");
 }
 
-.door {
-  background-image: url("../img/door.png");
+.door_closed {
+  background-image: url("../img/door_closed.png");
+}
+
+.door_opened {
+  background-image: url("../img/door_opened.png");
 }
