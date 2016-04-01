@@ -2,7 +2,7 @@ function hero(_life, _damage) {
 
 	this.life = _life;
 	this.damage = _damage;
-	this.lifechange = new Event(this);
+	this.lifechange = new event(this);
 
 
 	this.setlife = function(_life) {
@@ -89,6 +89,7 @@ function liste() { //  Class liste
 	this.taille_liste = function() {
 		return this.liste_monstre.length;
 	}
+	
 
 }
 
@@ -103,9 +104,9 @@ function plateau_de_jeu() {
 		for (var c = 0; c < this.colonne; c++) {
 			_tmp[c] = [];
 			for (var f = 0; f < this.ligne; f++) {
-				if (c === 0) {
+				if (c === 0 && f===0) {
 					_tmp[c].push(new case_(0, 0));
-					_tmp[c].setEst_detruit(1);
+					_tmp[c][f].setEst_detruit(1);
 				} else {
 					_tmp[c].push(new case_(0, 0));
 				}
@@ -138,6 +139,67 @@ function plateau_de_jeu() {
 		
 	}
 	
+	this.cases_adjacentes_revelees = function(x,y){
+		
+		if(x+1<6)
+			this.plateau[x+1][y].setEst_destructible(1);
+		if(x+1<6 && y+1<5)
+			this.plateau[x+1][y+1].setEst_destructible(1);
+		if(x+1<6 && y-1>=0)
+			this.plateau[x+1][y-1].setEst_destructible(1);
+		if(y+1<5)
+			this.plateau[x][y+1].setEst_destructible(1);
+		if(y-1>=0)
+			this.plateau[x][y-1].setEst_destructible(1);
+		if(x-1>=0)
+			this.plateau[x-1][y].setEst_destructible(1);
+		if(x-1>=0 && y-1>=0)
+			this.plateau[x-1][y-1].setEst_destructible(1);
+		if(x-1>=0 && y+1<5)
+			this.plateau[x-1][y+1].setEst_destructible(1);
+		
+	}
+	
+	this.case_adjacentes_destructibles = function(x,y){
+		
+		if(x+1<6)
+			this.plateau[x+1][y].setEst_revele(1);
+		if(x+1<6 && y+1<5)
+			this.plateau[x+1][y+1].setEst_revele(1);
+		if(x+1<6 && y-1>=0)
+			this.plateau[x+1][y-1].setEst_revele(1);
+		if(y+1<5)
+			this.plateau[x][y+1].setEst_revele(1);
+		if(y-1>=0)
+			this.plateau[x][y-1].setEst_revele(1);
+		if(x-1>=0)
+			this.plateau[x-1][y].setEst_revele(1);
+		if(x-1>=0 && y-1>=0)
+			this.plateau[x-1][y-1].setEst_revele(1);
+		if(x-1>=0 && y+1<5)
+			this.plateau[x-1][y+1].setEst_revele(1);
+		
+	}
+	
+	this.getPlateau = function(){
+		return this.plateau;
+	}
+	
+	this.getColonne = function(){
+		return this.colonne;
+	}
+	
+	this.getLigne = function(){
+		return this.ligne;
+	}
+	
+	this.getTaux_cle = function(){
+		return this.taux_cle;
+	}
+	
+	this.getTaux_monstre = function(){
+		return this.taux_monstre;
+	}
 
 
 }
@@ -147,6 +209,7 @@ function case_(destructible, revele) {
 	this.est_revele = revele;
 	this.est_destructible = destructible;
 	this.est_detruit = 0;
+	this.monstre = 0;
 
 	this.getEst_revele = function() {
 		return this.est_revele;
@@ -158,6 +221,10 @@ function case_(destructible, revele) {
 
 	this.getEst_detruit = function() {
 		return this.est_detruit;
+	}
+	
+	this.getMonstre = function(){
+		return this.monstre;
 	}
 
 	this.setEst_revele = function(_revele) {
@@ -171,4 +238,10 @@ function case_(destructible, revele) {
 	this.setEst_detruit = function(_detruit) {
 		this.est_detruit = _detruit;
 	}
+	
+	this.setMonstre = function(_monstre){
+		this.monstre = _monstre;
+	}
+	
+	
 }
