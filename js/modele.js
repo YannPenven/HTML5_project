@@ -105,10 +105,10 @@ function plateau_de_jeu() {
 			_tmp[c] = [];
 			for (var f = 0; f < this.ligne; f++) {
 				if (c === 0 && f===0) {
-					_tmp[c].push(new case_(0, 0));
-					_tmp[c][f].setEst_detruit(1);
+					_tmp[c].push(new case_(false, false));
+					_tmp[c][f].setEst_detruit(true);
 				} else {
-					_tmp[c].push(new case_(0, 0));
+					_tmp[c].push(new case_(false, false));
 				}
 			}
 		}
@@ -163,21 +163,21 @@ function plateau_de_jeu() {
 	this.case_adjacentes_destructibles = function(x,y){
 		
 		if(x+1<6)
-			this.plateau[x+1][y].setEst_revele(1);
+			this.plateau[x+1][y].setEst_revele(true);
 		if(x+1<6 && y+1<5)
-			this.plateau[x+1][y+1].setEst_revele(1);
+			this.plateau[x+1][y+1].setEst_revele(true);
 		if(x+1<6 && y-1>=0)
-			this.plateau[x+1][y-1].setEst_revele(1);
+			this.plateau[x+1][y-1].setEst_revele(true);
 		if(y+1<5)
-			this.plateau[x][y+1].setEst_revele(1);
+			this.plateau[x][y+1].setEst_revele(true);
 		if(y-1>=0)
-			this.plateau[x][y-1].setEst_revele(1);
+			this.plateau[x][y-1].setEst_revele(true);
 		if(x-1>=0)
-			this.plateau[x-1][y].setEst_revele(1);
+			this.plateau[x-1][y].setEst_revele(true);
 		if(x-1>=0 && y-1>=0)
-			this.plateau[x-1][y-1].setEst_revele(1);
+			this.plateau[x-1][y-1].setEst_revele(true);
 		if(x-1>=0 && y+1<5)
-			this.plateau[x-1][y+1].setEst_revele(1);
+			this.plateau[x-1][y+1].setEst_revele(true);
 		
 	}
 	
@@ -208,8 +208,8 @@ function case_(destructible, revele) {
 
 	this.est_revele = revele;
 	this.est_destructible = destructible;
-	this.est_detruit = 0;
-	this.monstre = 0;
+	this.est_detruit = false;
+	this.monstre = false;
 
 	this.getEst_revele = function() {
 		return this.est_revele;
