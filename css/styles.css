@@ -54,28 +54,37 @@ body {
 
 /* ----------------- jeu -------------------------- */
 
+#board {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 td {
-  width: 100px;
-  height: 100px;
+  width: 64px;
+  height: 64px;
 }
 
 .img {
   background-repeat: no-repeat;
-  background-size: 100px 100px;
+  background-size: 64px 64px;
 }
 
 .hidden {
-  background-image: url("../img/wall_unrevealed.png");
+  background-image: url("../img/hidden.png");
 }
 
 .revealed {
-  background-image: url("../img/wall_revealed.png");
+  background-image: url("../img/revealed.png");
 }
 
 .broken {
-  background-image: url("../img/floor.png");
+  background-image: url("../img/broken.png");
 }
 
 .blocked {
-  background-image: url("../img/red_cross.png");
+  background-image: url("../img/blocked.png");
+}
+
+.door {
+  background-image: url("../img/door.png");
 }

@@ -100,14 +100,14 @@ function plateau_de_jeu() {
 	this.plateau = function() {
 		var _tmp = [];
 
-		for (var c = 0; c < this.colonne; c++) {
+		for (var c = 0; c < this.ligne; c++) {
 			_tmp[c] = [];
-			for (var f = 0; f < this.ligne; f++) {
-				if (c === 0) {
-					_tmp[c].push(new case_(0, 0));
-					_tmp[c].setEst_detruit(1);
+			for (var f = 0; f < this.colonne; f++) {
+				if (c === 0 && f === 0) {
+					_tmp[c].push(new case_(true, true));
+					_tmp[c][f].setEst_detruit(true);
 				} else {
-					_tmp[c].push(new case_(0, 0));
+					_tmp[c].push(new case_(true, false));
 				}
 			}
 		}
@@ -137,8 +137,6 @@ function plateau_de_jeu() {
 		this.taux_cle = 1/this.nombre_monstre;
 		
 	}
-	
-
 
 }
 
@@ -146,7 +144,7 @@ function case_(destructible, revele) {
 
 	this.est_revele = revele;
 	this.est_destructible = destructible;
-	this.est_detruit = 0;
+	this.est_detruit = false;
 
 	this.getEst_revele = function() {
 		return this.est_revele;
