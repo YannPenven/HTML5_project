@@ -21,17 +21,18 @@ $(".case").click(function(){  // Lors d'un clic sur une case
           if(Math.random() <= plateau_de_jeu.getTaux_monstre){   // Calcul si il y a un monstre ou non
 
               case_.setMonstre(new monstre("a",100,100));
+              
 
           }
 
-          if(Math.random() <= plateau_de_jeu.getTaux_cle){    // Calcul si il y a une clé ou non
-
-
-
-          }
+          
 
       }else{
 
+          if(case_.getMonstre!==false){
+            
+          }
+        
           alert("Coup interdit - La case ne peut pas être détruite");
 
       }    
