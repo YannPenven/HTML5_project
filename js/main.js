@@ -7,7 +7,7 @@ $("document").ready(function(){
  
   $.ajax({
   		type: "GET",
-  		url: "https://api.myjson.com/bins/2gmcn",
+  		url: "https://api.myjson.com/bins/2av9o",
 
   		dataType : 'json',
       contentType: "application/json; charset=utf-8",
@@ -19,14 +19,12 @@ $("document").ready(function(){
            var hero_data = json_file.hero;
            var monster_data = json_file.monstre;
            for(var i in hero_data){
-             console.log(hero_data[i].life);
-             console.log(hero_data[i].damage);
-              heroList.push(new hero(hero_data[i].life,hero_data[i].damage));
+              heroList.push(new hero(hero_data[i].life,hero_data[i].damage));//crée une liste des héro disponible
             }
            for(var j in monster_data){
-              monstreList.push(new hero(monster_data[i].life,monster_data[i].damage));
+              monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage));//crée une liste des monstre disponible
             }
-          console.log(heroList);
+          //console.log(monstreList);
           //affiche plateau
    
       },
@@ -38,6 +36,7 @@ $("document").ready(function(){
 
   
   //console.log(heroList);
+  
 
 });
 
