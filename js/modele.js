@@ -92,7 +92,7 @@ function liste() { //  Class liste
 		return this.liste_monstre.length;
 	}
 	
-
+}
 
 function plateau_de_jeu() {
 
@@ -103,21 +103,16 @@ function plateau_de_jeu() {
 
 		for (var c = 0; c < this.ligne; c++) {
 			_tmp[c] = [];
-<<<<<<< HEAD
-			for (var f = 0; f < this.ligne; f++) {
-				if (c === 0 && f===0) {
-					_tmp[c].push(new case_(false, false));
-					_tmp[c][f].setEst_detruit(true);
-				} else {
-					_tmp[c].push(new case_(false, false));
-=======
+
+
 			for (var f = 0; f < this.colonne; f++) {
 				if (c === 0 && f === 0) {
 					_tmp[c].push(new case_(true, true));
 					_tmp[c][f].setEst_detruit(true);
 				} else {
 					_tmp[c].push(new case_(true, false));
->>>>>>> jeremie
+
+
 				}
 			}
 		}
@@ -147,7 +142,7 @@ function plateau_de_jeu() {
 		this.taux_cle = 1/this.nombre_monstre;
 		
 	}
-<<<<<<< HEAD
+
 	
 	this.cases_adjacentes_revelees = function(x,y){
 		
@@ -211,8 +206,7 @@ function plateau_de_jeu() {
 		return this.taux_monstre;
 	}
 
-=======
->>>>>>> jeremie
+
 
 }
 
@@ -221,10 +215,9 @@ function case_(destructible, revele) {
 	this.est_revele = revele;
 	this.est_destructible = destructible;
 	this.est_detruit = false;
-<<<<<<< HEAD
+
 	this.monstre = false;
-=======
->>>>>>> jeremie
+
 
 	this.getEst_revele = function() {
 		return this.est_revele;
