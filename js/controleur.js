@@ -13,10 +13,10 @@ $(".case").click(function(){  // Lors d'un clic sur une case
       if(case_.getEst_destructible){  // Vérification si la case est cliquable ou non
 
 
-          case_.setEst_detruit(1);
+          case_.setEst_detruit(true);
 
 
-          case_.setEst_destructible(1);   // Rendre les cases adjacentes destructibles
+          case_.setEst_destructible(true);   // Rendre les cases adjacentes destructibles
 
           if(Math.random() <= plateau_de_jeu.getTaux_monstre){   // Calcul si il y a un monstre ou non
 
