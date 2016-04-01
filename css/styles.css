@@ -47,6 +47,31 @@ body {
     color: #595959;
 }
 
+#button {
+  width: 0;
+  margin: 0 auto;
+}
+
 /* ----------------- jeu -------------------------- */
 
+td {
+  width: 100px;
+  height: 100px;
+}
 
+.img {
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+}
+
+.hidden {
+  background-image: url("../img/wall_unrevealed.png");
+}
+
+.revealed {
+  background-image: url("../img/wall_revealed.png");
+}
+
+.broken {
+  background-image: url("../img/floor.png");
+}

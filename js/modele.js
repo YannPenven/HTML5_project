@@ -104,9 +104,9 @@ function plateau_de_jeu() {
 		for (var c = 0; c < this.colonne; c++) {
 			_tmp[c] = [];
 			for (var f = 0; f < this.ligne; f++) {
-				if (c === 0) {
+				if (c === 0 && f===0) {
 					_tmp[c].push(new case_(0, 0));
-					_tmp[c].setEst_detruit(1);
+					_tmp[c][f].setEst_detruit(1);
 				} else {
 					_tmp[c].push(new case_(0, 0));
 				}

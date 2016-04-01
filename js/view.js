@@ -1,26 +1,35 @@
-var blocks = new Array();
-for (var i = 0; i < 6; i++) {
-    blocks.push();
-    for (var j = 0; j < 5; j++) {
-        blocks.push(new block(1, 0));
-    }
-}
-
-
 $(document).ready(function() {
 
-
-
-    $('#board').append("<table>");
-    for (var i = 1; i <= 6; i++) {
-        $('#board').append("<tr>");
-        for (var j = 1; j <= 5; j++) {
-
-            $("#board").append("<td id='" + i + "_" + j + "'></td>")
-
+    var blocks =[];
+    for (var i = 0; i < 6; i++) {
+        blocks.push(new Array());
+        for (var j = 0; j < 5; j++) {
+            blocks[i].push(new case_(0, 0));
         }
-        $('#board').append("</tr>");
     }
-    $('#board').append("</table>");
+
+    function affichePlateau(listeCases) {
+
+        $('#board').append("<table>");
+        for (var i = 0; i < 6; i++) {
+            $('#board').append("<tr>");
+            for (var j = 0; j < 5; j++) {
+
+                if (!(listeCases[i][j].getEst_revele)) {
+                    $("#board").append("<td id='" + i + "_" + j + "' class='hidden img'></td>");
+                } else if (listeCases[i][j].getEst_destructible) {
+                    $("#board").append("<td id='" + i + "_" + j + "' class='revealed img'></td>");
+                } else {
+                    $("#board").append("<td id='" + i + "_" + j + "' class='broken img'></td>");
+                }
+
+            }
+            $('#board').append("</tr>");
+        }
+        $('#board').append("</table>");
+
+    }
+
+    affichePlateau(blocks);
 
 });
