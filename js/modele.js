@@ -3,6 +3,7 @@ function hero(_life, _damage) {
 	this.life = _life;
 	this.damage = _damage;
 	this.lifechange = new event(this);
+	this.lifechange.attach(test_hero);
 
 
 	this.setlife = function(_life) {
