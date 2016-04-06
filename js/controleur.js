@@ -68,7 +68,7 @@ $("document").ready(function(){
               heroList.push(new hero(hero_data[i].life,hero_data[i].damage));//crée une liste des héro disponible
             }
            for(var j in monster_data){
-              monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage));//crée une liste des monstre disponible
+              monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage,"blocked img"));//crée une liste des monstre disponible
             }
           //console.log(monstreList);
           //affiche plateau
