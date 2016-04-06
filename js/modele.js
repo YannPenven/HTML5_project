@@ -37,12 +37,12 @@ function event(_sender) {
 	}
 }
 
-function monstre(Nom, Vie, Attaque) { //  Class monstre
+function monstre(Nom, Vie, Attaque,img) { //  Class monstre contient sont nom/id, les points de vie, l'attaque et l'image qui le représente
 
 	this.Nom = Nom;
 	this.pointVie = Vie;
 	this.pointAttaque = Attaque;
-	this.image;
+	this.image = img;
 
 
 	this.getNom = function() {
@@ -56,15 +56,14 @@ function monstre(Nom, Vie, Attaque) { //  Class monstre
 	this.getpointAttaque = function() {
 		return this.pointAttaque;
 	}
+	
+	this.getImage = function(){
+		return this.image;
+	}
 
 	this.setpointVie = function(pointVie) {
 		this.pointVie = pointVie;
 	}
-
-	this.setpointAttaque = function(pointAttaque) {
-		this.pointAttaque = pointAttaque;
-	}
-
 
 }
 
