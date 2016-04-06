@@ -19,7 +19,13 @@ $(document).ready(function() {
                     } else {
 
                         if (listeCases[i][j].getEst_detruit()) {
-                            $("#board").append("<td id='" + i + "_" + j + "' class='broken img' onclick='eventOnClick(this)'></td>");
+                            
+                            if(listeCases[i][j].getMonstre != false){
+                                $("#board").append("<td id='" + i + "_" + j + "' class='monster img' onclick='eventOnClick(this)'></td>");
+                            } else {
+                                $("#board").append("<td id='" + i + "_" + j + "' class='broken img' onclick='eventOnClick(this)'></td>");
+                            }
+                            
                         } else {
 
                             if (listeCases[i][j].getEst_destructible()) {
@@ -42,8 +48,5 @@ $(document).ready(function() {
     }
  
     affichePlateau(grille);
-    
-    $("#damage p").html(4);
-    $("#health p").html(50);
 
 });
