@@ -1,26 +1,28 @@
 var clic_case = new event();
 
 
-$(".case").click(function(){  // Lors d'un clic sur une case 
+function evenOnClick(id){  // Lors d'un clic sur une case 
     
     /****** Ne pas oublier de mettre le nom de la div ******/
     /****** Ne pas oublier de remplacer case_ par la case cliqué ******/
   
-    var case_selectionné;
+    //var case_selectionné;
+    var str = id.id;
+    var caseTab = str.split("_");
   
-    if(!case_.getEst_detruit){ // Vérification si la case est détruite ou non
+    if(!grille[caseTab[0]][caseTab[1]].getEst_detruit){ // Vérification si la case est détruite ou non
       
-      if(case_.getEst_destructible){  // Vérification si la case est cliquable ou non
+      if(grille[caseTab[0]][caseTab[1]].getEst_destructible){  // Vérification si la case est cliquable ou non
 
 
-          case_.setEst_detruit(true);
+          grille[caseTab[0]][caseTab[1]].setEst_detruit(true);
 
 
-          case_.setEst_destructible(true);   // Rendre les cases adjacentes destructibles
+          grille[caseTab[0]][caseTab[1]].cases_adjacentes_revelees(true);   // Rendre les cases adjacentes destructibles
 
           if(Math.random() <= plateau_de_jeu.getTaux_monstre){   // Calcul si il y a un monstre ou non
 
-              case_.setMonstre(new monstre("a",100,100));
+              case_.setMonstre(monstreList[Math.random() * (monstreList.size - 0) + 0]);
 
           }
 
@@ -39,8 +41,8 @@ $(".case").click(function(){  // Lors d'un clic sur une case
     
       
     }
-  
-});
+  affichePlateau(grille);
+}
 
 $("document").ready(function(){
 
@@ -66,7 +68,7 @@ $("document").ready(function(){
               heroList.push(new hero(hero_data[i].life,hero_data[i].damage));//crée une liste des héro disponible
             }
            for(var j in monster_data){
-              monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage));//crée une liste des monstre disponible
+              monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage,"blocked img"));//crée une liste des monstre disponible
             }
           //console.log(monstreList);
           //affiche plateau
@@ -78,8 +80,6 @@ $("document").ready(function(){
        },
   })
 
-  
-  //console.log(heroList);
   
 
 });
