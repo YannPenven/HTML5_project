@@ -41,7 +41,7 @@ $("document").ready(function(){
 });
 
 
-$("#health").setAttribute("class",heroList[0].getpointVie);
+$("#health p").html(heroList[0].getpointVie);
 
-$("#damage").setAttribute("class",heroList[0].getpointAttaque);
+$("#damage").html(heroList[0].getpointAttaque);
 
