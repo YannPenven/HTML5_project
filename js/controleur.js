@@ -71,7 +71,7 @@ $("document").ready(function(){
  
   $.ajax({
   		type: "GET",
-  		url: "https://api.myjson.com/bins/2av9o",
+  		url: "https://jsonblob.com/api/jsonBlob/57065df3e4b01190df5c6af4",
 
   		dataType : 'json',
       contentType: "application/json; charset=utf-8",
@@ -98,8 +98,6 @@ $("document").ready(function(){
        },
   })
 
-  
-  //console.log(heroList);
   
 
 });
