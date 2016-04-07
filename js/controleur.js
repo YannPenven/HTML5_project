@@ -1,7 +1,7 @@
 var clic_case = new event();
 
 
-function evenOnClick(id){  // Lors d'un clic sur une case 
+function eventOnClick(id){  // Lors d'un clic sur une case 
     
     /****** Ne pas oublier de mettre le nom de la div ******/
     /****** Ne pas oublier de remplacer case_ par la case cliqué ******/
@@ -53,7 +53,7 @@ $("document").ready(function(){
  
   $.ajax({
   		type: "GET",
-  		url: "https://api.myjson.com/bins/2av9o",
+  		url: "https://jsonblob.com/api/jsonBlob/57065df3e4b01190df5c6af4",
 
   		dataType : 'json',
       contentType: "application/json; charset=utf-8",
@@ -80,8 +80,6 @@ $("document").ready(function(){
        },
   })
 
-  
-  //console.log(heroList);
   
 
 });
