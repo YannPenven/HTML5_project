@@ -41,3 +41,7 @@ $("document").ready(function(){
 });
 
 
+$("#health p").html(heroList[0].getpointVie);
+
+$("#damage").html(heroList[0].getpointAttaque);
+
