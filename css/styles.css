@@ -54,8 +54,8 @@ body {
 
 /* ----------------- jeu -------------------------- */
 
-body {
-  max-width: 320px;
+#jeu {
+  max-width: 321px;
   margin: 0 auto;
 }
 
@@ -64,11 +64,11 @@ td {
   height: 64px;
 }
 
-#footer p {
-  margin: 76% 15%;
+#data {
+  margin-left: 40.5%;
 }
 
-#footer #hero, #stats {
+#stats * {
   display: inline-block;
 }
 
