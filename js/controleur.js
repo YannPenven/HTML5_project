@@ -20,17 +20,29 @@ function eventOnClick(id){  // Lors d'un clic sur une case
 
           grille[caseTab[0]][caseTab[1]].cases_adjacentes_revelees(true);   // Rendre les cases adjacentes destructibles
 
-          if(Math.random() <= plateau_de_jeu.getTaux_monstre){   // Calcul si il y a un monstre ou non
+          if(Math.random() <= plateau.getTaux_monstre){   // Calcul si il y a un monstre ou non
 
               case_.setMonstre(monstreList[Math.random() * (monstreList.size - 0) + 0]);
 
           }
 
-          if(Math.random() <= plateau_de_jeu.getTaux_cle){    // Calcul si il y a une clé ou non
+          var monstre_sel = grille[caseTab[0]][caseTab[1]].getMonstre;
 
+            if(monstre_sel!=false){
 
+              if(monstre_sel.getpointVie<=0){
 
-          }
+                grille[caseTab[0]][caseTab[1]].setMonstre(false);
+                
+                if(Math.random() <= plateau.getTaux_cle){    // Calcul si il y a une clé ou non
+
+                    $("#0_0").removeClass('door_closed img').addClass('door_open img');
+                    alert("GAGNEE");
+
+                }
+
+              }
+            }
 
       }else{
 
@@ -42,6 +54,12 @@ function eventOnClick(id){  // Lors d'un clic sur une case
       
     }
   affichePlateau(grille);
+}
+
+function test_hero(hero, vie){
+  if(vie<=0){
+    alert("PERDU");
+  }
 }
 
 $("document").ready(function(){
