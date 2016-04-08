@@ -54,14 +54,22 @@ body {
 
 /* ----------------- jeu -------------------------- */
 
-#board {
-  max-width: 320px;
+#jeu {
+  max-width: 321px;
   margin: 0 auto;
 }
 
 td {
   width: 64px;
   height: 64px;
+}
+
+#data {
+  margin-left: 40.5%;
+}
+
+#stats * {
+  display: inline-block;
 }
 
 .img {
@@ -91,4 +99,8 @@ td {
 
 .door_opened {
   background-image: url("../img/door_opened.png");
+}
+
+.monster {
+  background-image: url("../img/monster.png");
 }
