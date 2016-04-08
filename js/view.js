@@ -48,7 +48,23 @@
     }
  
 
-    //affichePlateau(grille);
+    affichePlateau(grille);
+
+  function setEtatCase(i, j, etat) { // etat peut valoir blocked, broken, hidden, revealed, ...
+    
+    $("#" + i + "_" + j).removeClass(function() {
+      return $(this).prev().attr("class");
+    });
+    $("#" + i + "_" + j).addClass(etat + " img");
+    
+  }
+
+  setEtatCase(1, 1, "blocked"); //exemple d'utilisation
+
+  $('#health span').html(50);
+  $('#damage span').html(4);
+
+  affichePlateau(grille);
     
     
 
