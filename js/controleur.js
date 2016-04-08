@@ -70,6 +70,8 @@ $("document").ready(function(){
            for(var j in monster_data){
               monstreList.push(new monstre(monster_data[j].id,monster_data[j].life,monster_data[j].damage,"monster img"));//crée une liste des monstre disponible
             }
+        var plateau = new plateau_de_jeu();
+        affichePlateau(plateau.plateau());
           //console.log(monstreList);
           //affiche plateau
    

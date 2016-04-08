@@ -1,7 +1,6 @@
-$(document).ready(function() {
 
-    var plateau = new plateau_de_jeu();
-    var grille = plateau.plateau();
+
+    
 
     function affichePlateau(listeCases) {
 
@@ -38,12 +37,11 @@ $(document).ready(function() {
             $('#board').append("</tr>");
         }
         $('#board').append("</table>");
-
+        $("#damage p").html(4);
+        $("#health p").html(50);
     }
  
-    affichePlateau(grille);
+    //affichePlateau(grille);
     
-    $("#damage p").html(4);
-    $("#health p").html(50);
+    
 
-});
