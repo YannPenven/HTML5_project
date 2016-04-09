@@ -3,7 +3,7 @@
     
 
     function affichePlateau(listeCases) {
-
+        $('#board').html("");
         $('#board').append("<table>");
         for (var i = 0; i < 6; i++) {
             $('#board').append("<tr>");
@@ -19,7 +19,7 @@
 
                         if (listeCases[i][j].getEst_detruit()) {
                             
-                            if(listeCases[i][j].getMonstre != false){
+                            if(listeCases[i][j].getMonstre() !== false){
                                 $("#board").append("<td id='" + i + "_" + j + "' class='monster img' onclick='eventOnClick(this)'></td>");
                             } else {
                                 $("#board").append("<td id='" + i + "_" + j + "' class='broken img' onclick='eventOnClick(this)'></td>");
@@ -43,12 +43,11 @@
             $('#board').append("</tr>");
         }
         $('#board').append("</table>");
-        $("#damage p").html(4);
-        $("#health p").html(50);
+        
     }
  
 
-    affichePlateau(grille);
+    //affichePlateau(grille);
 
   function setEtatCase(i, j, etat) { // etat peut valoir blocked, broken, hidden, revealed, ...
     
@@ -59,12 +58,14 @@
     
   }
 
-  setEtatCase(1, 1, "blocked"); //exemple d'utilisation
+  //setEtatCase(1, 1, "blocked"); //exemple d'utilisation
+  function setStatHero(heroDamage,heroLife){
+    $('#health span').html(heroLife);
+    $('#damage span').html(heroDamage);
+  }
+  
 
-  $('#health span').html(50);
-  $('#damage span').html(4);
-
-  affichePlateau(grille);
+  //affichePlateau(grille);
     
     
 
